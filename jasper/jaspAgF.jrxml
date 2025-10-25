@@ -1,0 +1,152 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="jaspAgF" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2751cb85-150f-4a5f-9ee6-eb8263aba517">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL"/>
+	<dataset name="Dataset1" uuid="41de2bbc-3015-4ec9-97e7-4a6dbf49d651">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL"/>
+		<query language="SQL"><![CDATA[SELECT
+  t.id AS id_tramite,
+  t.DTYPE AS tipo_tramite,
+  t.costo AS costo_tramite,
+  per.nombre AS nombre_persona,
+  COALESCE(l.fechaExpedicion, p.fechaEmision) AS fecha_registro,
+  l.id AS id_licencia,
+  p.id AS id_placa
+FROM tramites t
+LEFT JOIN persona per ON per.id = t.id_persona
+LEFT JOIN licencia l ON l.id = t.id
+LEFT JOIN placa p   ON p.id = t.id
+ORDER BY t.id
+]]></query>
+		<field name="id_tramite" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="ID"/>
+			<property name="com.jaspersoft.studio.field.label" value="id_tramite"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+		</field>
+		<field name="tipo_tramite" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="DTYPE"/>
+			<property name="com.jaspersoft.studio.field.label" value="tipo_tramite"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+		</field>
+		<field name="costo_tramite" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="Costo"/>
+			<property name="com.jaspersoft.studio.field.label" value="costo_tramite"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+		</field>
+		<field name="nombre_persona" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre_persona"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+		</field>
+		<field name="fecha_registro" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="fecha_registro"/>
+			<property name="com.jaspersoft.studio.field.label" value="fecha_registro"/>
+		</field>
+		<field name="id_licencia" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id_licencia"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="licencia"/>
+		</field>
+		<field name="id_placa" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.name" value="id"/>
+			<property name="com.jaspersoft.studio.field.label" value="id_placa"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="placa"/>
+		</field>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT
+  t.id AS id_tramite,
+  t.DTYPE AS tipo_tramite,
+  t.costo AS costo_tramite,
+  per.nombre AS nombre_persona,
+  COALESCE(l.fechaExpedicion, p.fechaEmision) AS fecha_registro,
+  l.id AS id_licencia,
+  p.id AS id_placa
+FROM tramites t
+LEFT JOIN persona per ON per.id = t.id_persona
+LEFT JOIN licencia l ON l.id = t.id
+LEFT JOIN placa p   ON p.id = t.id
+ORDER BY t.id]]></query>
+	<field name="id_tramite" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_tramite"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+	</field>
+	<field name="tipo_tramite" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DTYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo_tramite"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+	</field>
+	<field name="costo_tramite" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Costo"/>
+		<property name="com.jaspersoft.studio.field.label" value="costo_tramite"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tramites"/>
+	</field>
+	<field name="nombre_persona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_persona"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="fecha_registro" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha_registro"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha_registro"/>
+	</field>
+	<field name="id_licencia" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_licencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="licencia"/>
+	</field>
+	<field name="id_placa" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="placa"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="110" splitType="Stretch">
+		<element kind="staticText" uuid="c256d956-6ef0-45ba-a70a-79fae12eeb55" x="120" y="10" width="310" height="80" fontSize="29.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Reporte de Trámites Realizados]]></text>
+		</element>
+		<element kind="textField" uuid="a336d392-36b9-4576-93fb-16ae2a8f6567" x="470" y="10" width="100" height="30" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="80" splitType="Stretch">
+		<element kind="staticText" uuid="7e95b435-b6bb-4c8f-a8a4-9b243731145c" x="20" y="38" width="100" height="30" bold="true">
+			<text><![CDATA[Fecha del trámite]]></text>
+		</element>
+		<element kind="staticText" uuid="d81874b4-c2c9-4df9-a9a7-902dafd864c3" x="121" y="38" width="100" height="30" bold="true">
+			<text><![CDATA[Tipo de trámite ]]></text>
+		</element>
+		<element kind="line" uuid="2794ca8f-6197-497c-bf9b-1d63c9372198" x="20" y="69" width="530" height="1"/>
+		<element kind="staticText" uuid="56da4197-f962-4907-987e-1fdd6c9e5327" x="240" y="38" width="100" height="30" bold="true">
+			<text><![CDATA[Nombre de la persona del trámite]]></text>
+		</element>
+		<element kind="staticText" uuid="338ca476-1534-407f-9438-1478d421d193" x="450" y="38" width="100" height="30" bold="true">
+			<text><![CDATA[Costo]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="94" splitType="Stretch">
+			<element kind="textField" uuid="9577c4cc-1916-4c62-b577-2b4d6fba1e18" x="21" y="17" width="100" height="30">
+				<expression><![CDATA[$F{fecha_registro}.toLocalDate()]]></expression>
+			</element>
+			<element kind="textField" uuid="53e92523-5fa6-4fb7-941c-f91996af02b6" x="121" y="17" width="100" height="30">
+				<expression><![CDATA[$F{tipo_tramite}]]></expression>
+			</element>
+			<element kind="textField" uuid="80ae474a-bb06-4368-80fc-b95cf48fa61c" x="450" y="10" width="100" height="30">
+				<expression><![CDATA["$" + $F{costo_tramite}]]></expression>
+			</element>
+			<element kind="textField" uuid="b13b5c71-c45a-4584-8fce-4dde893bb035" x="250" y="17" width="100" height="30">
+				<expression><![CDATA[$F{nombre_persona}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="textField" uuid="fb00a687-80ae-4e00-948a-6a0cf3b05279" x="450" y="24" width="100" height="30">
+			<expression><![CDATA[$V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="60" splitType="Stretch"/>
+</jasperReport>
